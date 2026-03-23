@@ -110,8 +110,15 @@
             text-align: center;
         }
 
+        /* ألوان الأيقونات */
         .email-icon, .mobile-icon {
             color: #3e5e7f; 
+        }
+        .linkedin-icon {
+            color: #1a4f8f; 
+        }
+        .github-icon {
+            color: #000; 
         }
 
         .connect-text {
@@ -124,8 +131,13 @@
             color: inherit; 
         }
 
-        .email-icon + .connect-text a {
+        /* ألوان الروابط */
+        .email-icon + .connect-text a,
+        .linkedin-icon + .connect-text a {
             color: #2c537a; 
+        }
+        .github-icon + .connect-text a {
+            color: #000;
         }
 
         .connect-text a:hover {
@@ -173,6 +185,14 @@
                     <div class="connect-item">
                         <i class="fa-solid fa-mobile-screen-button mobile-icon"></i>
                         <div class="connect-text">mobile: +201552333000</div>
+                    </div>
+                    <div class="connect-item">
+                        <i class="fa-brands fa-linkedin-in linkedin-icon"></i>
+                        <div class="connect-text">linkedin: <a href="https://www.linkedin.com/in/bahgat-mashaly/" target="_blank">linkedin.com/in/bahgat-mashaly</a></div>
+                    </div>
+                    <div class="connect-item">
+                        <i class="fa-brands fa-github github-icon"></i>
+                        <div class="connect-text">github: <a href="https://github.com/BahgatMashaly" target="_blank">github.com/BahgatMashaly</a></div>
                     </div>
                 </div>
             </section>
