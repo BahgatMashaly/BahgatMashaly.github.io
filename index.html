@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bahgat Mashaly - Personal Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* إعدادات CSS العامة */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #2e3b47; /* رمادي غامق للنص */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* القسم الرئيسي للخلفية وتراكب اللون */
+        .background-overlay {
+            width: 100%;
+            height: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            /* مسار ملف الصورة الخلفية (يجب أن يكون في نفس المجلد) */
+            background-image: url('image_6.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* تراكب لوني شبه شفاف لجعل النص مقروءاً */
+        .background-overlay::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* بيج دافئ وشفاف بنسبة 75% */
+            background-color: rgba(240, 235, 230, 0.75);
+            z-index: 1;
+        }
+
+        /* حاوية النص المركزية (البطاقة) */
+        .content-container {
+            position: relative;
+            z-index: 2; /* لإظهاره فوق تراكب اللون */
+            background-color: transparent;
+            max-width: 900px;
+            width: 90%;
+            padding: 60px;
+            text-align: left; /* محاذاة النص بناءً على الصورة */
+        }
+
+        /* تنسيق العناوين */
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #000;
+        }
+
+        header h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #000;
+        }
+
+        /* تنسيق نص السيرة الذاتية */
+        .bio p {
+            font-size: 1.1rem;
+            line-height: 1.8; /* تباعد الأسطر لسهولة القراءة */
+            margin-bottom: 20px;
+        }
+
+        /* الكلمات الغامقة (Bold) */
+        .bio strong {
+            font-weight: 700;
+            color: #000;
+        }
+
+        /* تنسيق قسم الاتصال */
+        .connect h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 25px;
+            color: #000;
+        }
+
+        /* تخطيط شبكي لروابط الاتصال (عمودين) */
+        .connect-links {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px 40px; /* الفراغ العمودي والأفقي */
+            max-width: 800px; /* تحديد العرض ليشبه الصورة */
+        }
+
+        /* تنسيق كل عنصر اتصال (أيقونة + نص) */
+        .connect-item {
+            display: flex;
+            align-items: center;
+            gap: 15px; /* المسافة بين الأيقونة والنص */
+        }
+
+        /* تنسيق الأيقونات */
+        .connect-item i {
+            font-size: 1.8rem;
+            width: 30px; /* عرض ثابت لمحاذاة النص */
+            text-align: center;
+        }
+
+        /* ألوان الأيقونات بناءً على الصورة */
+        .email-icon, .mobile-icon {
+            color: #3e5e7f; /* أزرق غامق */
+        }
+        .linkedin-icon {
+            color: #1a4f8f; /* أزرق LinkedIn */
+        }
+        .github-icon {
+            color: #000; /* أسود GitHub */
+        }
+
+        /* تنسيق نص الاتصال */
+        .connect-text {
+            font-size: 1.1rem;
+            color: #2e3b47;
+        }
+
+        /* تنسيق الروابط */
+        .connect-text a {
+            text-decoration: none;
+            color: inherit; /* اللون الافتراضي يرث من النص */
+        }
+
+        /* ألوان الروابط بناءً على الصورة */
+        .email-icon + .connect-text a,
+        .linkedin-icon + .connect-text a {
+            color: #2c537a; /* أزرق */
+        }
+        .github-icon + .connect-text a {
+            color: #000; /* أسود */
+        }
+
+        /* تأثير عند تمرير الفأرة على الروابط */
+        .connect-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* تحسين العرض على الأجهزة اللوحية والمحمولة */
+        @media (max-width: 768px) {
+            .content-container {
+                padding: 40px 20px;
+                width: 95%;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+            header h2 {
+                font-size: 1.5rem;
+            }
+            .connect-links {
+                grid-template-columns: 1fr; /* عمود واحد على الهاتف */
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="background-overlay">
+        <div class="content-container">
+            <header>
+                <h1>Welcome to Mashaly Website</h1>
+				
+				<br><br><br>
+				
+				
+				
+               
+            </header>
+            <article class="bio">
+			 <h2>Bahgat Mashaly</h2>
+                <p>Senior Telecom Solutions Architect with a 20-year track record in software engineering and large-scale architectural design. I specialize in orchestrating complex telecommunications ecosystems, with deep expertise in <strong>BSS</strong>, <strong>OSS Management</strong> tailored to <strong>Event and Catalog-driven architectures</strong>.</p>
+                <p>I excel at bridging the gap between <strong>business strategy</strong> and <strong>technical execution</strong>, leading the <strong>full software development life cycle</strong>—from concept and analysis to deployment. My focus is on delivering scalable, high-performance solutions that address complex business and technical challenges.</p>
+            </article>
+            <section class="connect">
+                <h3>Connect</h3>
+                <div class="connect-links">
+                    <div class="connect-item">
+                        <i class="fa-regular fa-envelope email-icon"></i>
+                        <div class="connect-text">email: <a href="mailto:bahgat@mashaly.com">bahgat@mashaly.com</a></div>
+                    </div>
+                    <div class="connect-item">
+                        <i class="fa-solid fa-mobile-screen-button mobile-icon"></i>
+                        <div class="connect-text">mobile: +201552333000</div>
+                    </div>
+                    <div class="connect-item">
+                        <i class="fa-brands fa-linkedin-in linkedin-icon"></i>
+                        <div class="connect-text">linkedin: <a href="https://www.linkedin.com/in/bahgat-mashaly/">linkedin.com/in/bahgat-mashaly</a></div>
+                    </div>
+                    <div class="connect-item">
+                        <i class="fa-brands fa-github github-icon"></i>
+                        <div class="connect-text">github: <a href="https://github.com/BahgatMashaly">github.com/BahgatMashaly</a></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
